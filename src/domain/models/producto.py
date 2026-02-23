@@ -9,10 +9,10 @@ class Producto(ABC):
         Producto._contador_id += 1
         self.__id = Producto._contador_id
 
-        self.nombre = nombre
-        self.precio = precio
-        self.descripcion = descripcion
-        self.disponible = disponible
+        self._nombre = nombre
+        self._precio = precio
+        self._descripcion = descripcion
+        self._disponible = disponible
 
     @property
     def id(self):
@@ -20,20 +20,20 @@ class Producto(ABC):
 
     @property
     def nombre(self):
-        return self.nombre
+        return self._nombre
 
     @property
     def precio(self):
-        return self.precio
+        return self._precio
 
     @property
     def descripcion(self):
-        return self.descripcion
+        return self._descripcion
 
     @property
     def disponible(self):
-        return self.disponible
+        return self._disponible
 
     @disponible.setter
     def disponible(self, disponible: bool):
-        self.disponible = disponible
+        self._disponible = disponible

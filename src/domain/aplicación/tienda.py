@@ -1,4 +1,4 @@
-from venta import Venta
+from .venta import Venta
 
 class Tienda:
     def __init__(self, clientes: list, colaboradores: list, menu: list, ventas: list):

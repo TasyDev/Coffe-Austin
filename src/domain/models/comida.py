@@ -1,4 +1,4 @@
-from Producto import Producto
+from .producto import Producto
 
 class Comida(Producto):
     def __init__(self, nombre: str, precio: float, descripcion: str, disponible: bool, categoria: str, calorias: int):
