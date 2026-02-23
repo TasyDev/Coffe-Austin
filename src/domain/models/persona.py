@@ -1,14 +1,14 @@
 from abc import ABC
 
 
-class Cliente(ABC):
+class Persona(ABC):
 
     _contador_id = 0 # ID Global
 
     def __init__(self, nombre: str, apellido: str, telefono: str, correo: str):
         # Generar ID automáticamente
-        Cliente._contador_id += 1
-        self.__id = Cliente._contador_id
+        Persona._contador_id += 1
+        self.__id = Persona._contador_id
 
         # Usar setters
         self.nombre = nombre
