@@ -1,29 +1,36 @@
+from datetime import datetime
 from .persona import Persona
 
 class Colaborador(Persona):
-    def __init__(self, nombre: str, apellido: str, telefono: str, correo: str, horaDeLlegada: str, horaDeSalida: str):
+    def __init__(self, nombre: str, apellido: str, telefono: str, correo: str, fechaDeIngreso: datetime, salario: int, cargo: str):
         super().__init__(nombre, apellido, telefono, correo)
-        self._horaDeLlegada = horaDeLlegada
-        self._horaDeSalida = horaDeSalida    
+        self._fechaDeIngreso = fechaDeIngreso
+        self._salario = salario
+        self._cargo = cargo    
     
     @property
-    def horaDeLlegada(self):
-        horaDeLlegada = self._horaDeLlegada
-        return horaDeLlegada
+    def fechaDeIngreso(self):
+        fechaDeIngreso = self._fechaDeIngreso
+        return fechaDeIngreso
 
-    @horaDeLlegada.setter
-    def horaDeLlegada(self, horaDeLlegada: str):
-        self._horaDeLlegada = horaDeLlegada
+    @fechaDeIngreso.setter
+    def fechaDeIngreso(self, fechaDeIngreso: datetime):
+        self._fechaDeIngreso = fechaDeIngreso
+    
+    @property   
+    def salario(self):
+        salario = self._salario
+        return salario
+
+    @salario.setter
+    def salario(self, salario: int):
+        self._salario = salario
     
     @property
-    def horaDeSalida(self):
-        horaDeSalida = self._horaDeSalida
-        return horaDeSalida
+    def cargo(self):
+        cargo = self._cargo
+        return cargo
 
-    @horaDeSalida.setter
-    def horaDeSalida(self, horaDeSalida: str):
-        self._horaDeSalida = horaDeSalida
-
-    @property
-    def resumenDelDia(self):
-        return f"{self.nombre} {self.apellido} llego a las {self.horaDeLlegada} y salio a las {self.horaDeSalida}"
+    @cargo.setter
+    def cargo(self, cargo: str):
+        self._cargo = cargo

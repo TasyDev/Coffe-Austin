@@ -2,11 +2,23 @@ from .persona import Persona
 
 class Cliente(Persona):
     
-    def __init__(self, nombre: str, apellido: str, telefono: str, correo: str):
+    def __init__(self, nombre: str, apellido: str, telefono: str, correo: str, historialDeCompras: list, puntos: int):
         super().__init__(nombre, apellido, telefono, correo)
+        self._historialDeCompras = historialDeCompras
+        self._puntos = puntos
         
-    def comprar(self, producto: str):
-        print(f"El cliente {self.nombre} {self.apellido} ha comprado {producto}")
+    @property
+    def historialDeCompras(self):
+        return self._historialDeCompras
     
-    def pagar(self, monto: float):
-        print(f"El cliente {self.nombre} {self.apellido} ha pagado {monto}")
+    @historialDeCompras.setter
+    def historialDeCompras(self, historialDeCompras: list):
+        self._historialDeCompras = historialDeCompras
+    
+    @property
+    def puntos(self):
+        return self._puntos
+    
+    @puntos.setter
+    def puntos(self, puntos: int):
+        self._puntos = puntos
